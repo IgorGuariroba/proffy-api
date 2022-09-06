@@ -3,7 +3,7 @@ import path from 'path';
 module.exports = {
   client: 'mysql',
   connection: {
-    filename: path.resolve(__dirname, 'src', 'database', 'database.mysql')
+   directory: path.resolve(__dirname,'src','database','connections.ts')
   },
   migrations: {
     directory: path.resolve(__dirname, 'src', 'database', 'migrations')
