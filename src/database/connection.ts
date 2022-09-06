@@ -1,16 +1,12 @@
 import knex from 'knex';
-require('dotenv/config');
+import path from 'path';
 
 const db = knex({
-  client: 'mysql',
+  client: 'sqlite3',
   connection: {
-    host : process.env.HOST_DATABASE, 
-    port : 3306,
-    user : process.env.USER_DATABASE,
-    password : process.env.PASSWORD_DATABASE,
-    database : process.env.DATABASE_DATABASE
-  }
+    filename: path.resolve(__dirname, 'database.sqlite')
+  },
+  useNullAsDefault: true,
 });
-
 
 export default db;
